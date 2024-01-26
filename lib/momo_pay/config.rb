@@ -11,6 +11,7 @@ module MomoPay
     attr_accessor :verify_keys
     attr_accessor :signature_confirm_keys
     attr_accessor :signature_qr_code_keys
+    attr_accessor :signature_one_time_payment_keys
 
     def public_key_pem
       @public_key_pem ||= [
@@ -29,9 +30,11 @@ module MomoPay
     def initialize
       self.signature_confirm_keys = MomoPay::Default::SIGNATURE_CONFIRM_KEYS
       self.signature_qr_code_keys = MomoPay::Default::SIGNATURE_QR_CODE_KEYS
+      self.signature_one_time_payment_keys = MomoPay::Default::SIGNATURE_ONE_TIME_PAYMENT_KEYS
       self.verify_keys = {
         mobile: MomoPay::Default::SIGNATURE_MOBILE_VERIFY_KEYS,
         ipn: MomoPay::Default::SIGNATURE_IPN_VERIFY_KEYS,
+        one_time_payment: MomoPay::Default::SIGNATURE_ONE_TIME_PAYMENT_VERIFY_KEYS,
       }
     end
 
