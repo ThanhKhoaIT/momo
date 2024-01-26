@@ -17,6 +17,8 @@ require "momo_pay/request"
 require "momo_pay/rsa"
 require "momo_pay/signature"
 require "momo_pay/transaction"
+require "momo_pay/one_time_payment"
+require "momo_pay/one_time_payment_signature"
 
 module MomoPay
 
